@@ -7,6 +7,7 @@
 #' @param lambda22 Proportion in group 2, second evaluation
 #' @param alpha2 Overall test size
 #' @param beta Type II error rate.
+#' @param round Logical Should sample size be rounded?
 #' @return group sizes
 #' @importFrom stats qnorm
 #' @export

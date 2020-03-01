@@ -14,7 +14,7 @@ implicit none
 ! Using sample sizes, calculate cumulants, plus standard deviations and correlation.
 !    call justrho(m1,m2,n1,n2,rho,zero)
      call rstdcum(m1,m2,n1,n2,rho,sds,kk1,kk2,kk3,kk4,zero,ctl,badv,efg1)
-!    call makexvn(xvn,rho,alpha)
+!    call makexvn(xvn,rho,alpha,efg)
 #ifdef DEBUGME
      write(6,*) "In inside rho",rho
 #endif

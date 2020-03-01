@@ -9,7 +9,7 @@ NeedsCompilation: yes
 Description: This package calculates and tests the bivariate Cornish-Fisher
     expansion.
 Depends:
-    bivcornish, mets 
+    bivcornish
 License: GPL-2
 Encoding: UTF-8
 RoxygenNote: 7.0.1

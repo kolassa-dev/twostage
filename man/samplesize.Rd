@@ -29,6 +29,8 @@ samplesize(
 \item{alpha2}{Overall test size}
 
 \item{beta}{Type II error rate.}
+
+\item{round}{Logical Should sample size be rounded?}
 }
 \value{
 group sizes

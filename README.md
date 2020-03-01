@@ -3,3 +3,4 @@
 library(devtools)
 install_github("kolassa-dev/bivcornish")
 install_github("kolassa-dev/twostage")
+library(TwoStage)

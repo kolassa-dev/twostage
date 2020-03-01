@@ -1,6 +1,6 @@
      subroutine cornwrapper(xvraw,xv,xvc,kk1,kk2,kk3,kk4,nn,alpha,alphanew,rho,tointeger,order)
 implicit none
-     integer nn,done,order
+     integer nn,done,order,iflg
      character(len=77) fmt
      double precision xv(2),rho,kk3(2,2,2),kk4(2,2,2,2),alpha(2),kk1(2),kk2(2,2),sds(2),xvc(2),alphanew(2),xvraw(2)
      double precision x1,x2,x1p,x1pp,x2p,x2pp,k111,k112,k122,k222,k1111,k1112,k1122,k1222,k2222,temp
@@ -24,7 +24,8 @@ implicit none
      done=0
      do while(done.lt.2)
         done=done+1
-        call makexvn(xv,rho,alphanew)
+        call makexvn(xv,rho,alphanew,iflg)
+        if(iflg.ne.0) write(6,*) "Error from iflg"
 !       write(6,*) "In cornwrapper after makexvn, rho=",rho,"alphanew",alphanew,"xv",xv,"alpha",alpha
         x1=xv(1);x2=xv(2)
         call bivcorn(x1,x2,x1p,x1pp,x2p,x2pp,rho,k111,k112,k122,k222,k1111,k1112,k1122,k1222,k2222,nn,alphanew,.false.)
