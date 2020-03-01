@@ -1,0 +1,3 @@
+        subroutine rndstart()
+        return
+        end

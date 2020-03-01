@@ -1,0 +1,9 @@
+\def\probof#1#2{\mathop{\hbox{P}}\left[#2\right]}\def\Ncdf{\Phi}\def\half{{{1}\over{2}}}
+Choose delta to give Type II error rate $\beta$ using the full sample.
+Under the null hypothesis,
+$T_2\approx N(\mu_0,\tau_0^2)$ for $\mu_0=(m_1+m_2)(n_1+n_2)\probof{}{Y_j\geq X_i}=(m_1+m_2)(n_1+n_2)/2$ and $\tau_0^2=(m_1+m_2)(n_1+n_2)(m_1+m_2+n_1+n_2+1)/12$.
+Under the altnerative hypothesis,
+$T_2\approx N(\mu_A,\tau_A^2)$ for $\mu_A=(m_1+m_2)(n_1+n_2)\probof{}{Y_j\geq X_
+i}=(m_1+m_2)(n_1+n_2)\Ncdf(\delta/\sqrt{2})$ and $\tau_A^2$ by $\tau_0^2$.
+Then the $\mu_A=\mu_0+\sigma_A z_\alpha+\sigma_0 z_\beta$ and
+$\Ncdf(\theta/\sqrt{2})=\half+(z_\alpha+z_\beta)\sqrt{(m_1+m_2+n_1+n_2+1)/[12(m_1+m_2)(n_1+n_2)]}$, and $\theta=\sqrt{2}\Ncdf^{-1}(\half+(z_\alpha+z_\beta)\sqrt{(m_1+m_2+n_1+n_2+1)/[12(m_1+m_2)(n_1+n_2)]})$.

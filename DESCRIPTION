@@ -1,0 +1,15 @@
+Package: TwoStage
+Type: Package
+Title: Two Stage MWW
+Version: 1.0
+Date: 2018-12-22
+Author: Dewei Zhong and John Kolassa
+Maintainer: John Kolassa <kolassa@stat.rutgers.edu>
+NeedsCompilation: yes
+Description: This package calculates and tests the bivariate Cornish-Fisher
+    expansion.
+Depends:
+    bivcornish, mets 
+License: GPL-2
+Encoding: UTF-8
+RoxygenNote: 7.0.1

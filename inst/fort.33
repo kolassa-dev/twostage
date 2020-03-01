@@ -1,0 +1,8 @@
+ \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\hline
+ $m_1$&$n_1$&$m_2$&$n_2$&\multicolumn{2}{c|}{Uncorrected}&
+ \multicolumn{2}{c|}{Corrected}&\multicolumn{2}{c|}{True Size}\\
+   &  &  & & $x_1$     &  $x_2$    &$x_1$       & $x_2$&Naive&Cor.\\
+ \hline
+ 5& 5& 5& 5&22.50&22.50&72.50&72.50&0.9533&0.9470\\
+ 5& 5& 5& 5&23.50&23.50&76.50&76.50&0.9770&0.9733\\
+ \hline\end{tabular}

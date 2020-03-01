@@ -1,0 +1,59 @@
+OBJECTS = rstdcum.o allperm.o nextp.o inside.o evalu.o stdcum.o mom2cum.o fillp.o mvnpack.temp.o edswrapper.o terms.temp.o tvpack.temp.o tmom.o univariate.o realpc.o realpcs.o realpd.o realpe.o realpf.o realpg.o realpgs.o realph.o realphs.o realpk.o realpks.o cornwrapper.o moments.o mkfn.o justrho.o wildings.o wilding.o altern.o readout.o makexvn.o isecnorm.o dinvnr.o stvaln.o devlpl.o cumnor.o spmpar.o ipmpar.o snorm.o ranf.o ignlgi.o setall.o inrgcm.o mltmod.o getcgn.o initgn.o qrgnin.o
+MYFLAGS = -DBIGINT
+all: $(SHLIB)
+$(SHLIB): allperm.o
+	
+nextp.o: nextp.temp.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o nextp.o nextp.temp.f90
+allperm.o: allperm.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o allperm.o allperm.F90
+rstdcum.o: rstdcum.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o rstdcum.o rstdcum.F90
+evalu.o: evalu.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o evalu.o evalu.F90
+readout.o: readout.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o readout.o readout.F90
+wildings.o: wildings.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o wildings.o wildings.F90
+wilding.o: wilding.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o wilding.o wilding.F90
+inside.o: inside.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o inside.o inside.F90
+altern.o: altern.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o altern.o altern.f90
+makexvn.o: makexvn.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o makexvn.o makexvn.f90
+isecnorm.o: isecnorm.temp.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o isecnorm.o isecnorm.temp.f90
+# Borrowed from dcdflib
+dinvnr.o: dinvnr.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o dinvnr.o dinvnr.f
+stvaln.o: stvaln.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o stvaln.o stvaln.f
+devlpl.o: devlpl.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o devlpl.o devlpl.f
+cumnor.o: cumnor.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o cumnor.o cumnor.f
+ipmpar.o: ipmpar.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o ipmpar.o ipmpar.f
+spmpar.o: spmpar.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o spmpar.o spmpar.f
+# Borrowed from ranlib for readout.
+snorm.o: snorm.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o snorm.o snorm.f
+ranf.o: ranf.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o ranf.o ranf.f
+ignlgi.o: ignlgi.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o ignlgi.o ignlgi.f
+setall.o: setall.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o setall.o setall.f
+inrgcm.o: inrgcm.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o inrgcm.o inrgcm.f
+mltmod.o: mltmod.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o mltmod.o mltmod.f
+getcgn.o: getcgn.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o getcgn.o getcgn.f
+initgn.o: initgn.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o initgn.o initgn.f
+qrgnin.o: qrgnin.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o qrgnin.o qrgnin.f

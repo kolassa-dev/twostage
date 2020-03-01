@@ -1,0 +1,31 @@
+OBJECTS = rstdcum.o allperm.o nextp.o inside.o evalu.o stdcum.o mom2cum.o fillp.o mvnpack.temp.o edswrapper.o terms.temp.o tmom.o univariate.o realpc.o realpcs.o realpd.o realpe.o realpf.o realpg.o realpgs.o realph.o realphs.o realpk.o realpks.o cornwrapper.o moments.o mkfn.o justrho.o wildings.o wilding.o altern.o readout.o makexvn.o isecnorm.o wrapper.o tvpack.temp.o
+MYFLAGS = -DBIGINT
+all: $(SHLIB)
+$(SHLIB): allperm.o
+	
+nextp.o: nextp.temp.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o nextp.o nextp.temp.f90
+allperm.o: allperm.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o allperm.o allperm.F90
+rstdcum.o: rstdcum.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o rstdcum.o rstdcum.F90
+readout.o: readout.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o readout.o readout.F90
+wildings.o: wildings.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o wildings.o wildings.F90
+wilding.o: wilding.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o wilding.o wilding.F90
+inside.o: inside.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o inside.o inside.F90
+evalu.o: evalu.F90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) $(MYFLAGS) -c -o evalu.o evalu.F90
+altern.o: altern.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o altern.o altern.f90
+makexvn.o: makexvn.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o makexvn.o makexvn.f90
+isecnorm.o: isecnorm.temp.f90
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o isecnorm.o isecnorm.temp.f90
+tvpack.temp.o: tvpack.temp.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o tvpack.temp.o tvpack.temp.f
+terms.temp.o: terms.temp.f
+	$(FC) $(R_XTRA_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(SAFE_FFLAGS) -c -o terms.temp.o terms.temp.f

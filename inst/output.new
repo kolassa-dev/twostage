@@ -1,0 +1,4 @@
+                                ------  Critical Values -----  ---- Size ---   ---- Power ----------
+  alpha1   alpha2  m1 n1 m2 n2  Uncorrected      Corrected     Unc.    Corr.   Empir.  Normal  Edge-
+                                c1        c2     c1        c2                                  worth
+  0.0100   0.0250  5  5  5  5   1.363  22.475   1.779  22.713  0.0230  0.0230  0.0230  0.0277  0.0253
