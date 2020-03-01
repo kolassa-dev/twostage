@@ -39,6 +39,8 @@ List with componets delta, quantiles at which critical values ought to be calcul
 Calculates values associated with testing using two-stage Mann-Whitney-Wilcoxon statistic.
 }
 \examples{
-checktest(2,2,2,2,1)
+#For two stage testing paper
+checktest(5,5,5,5,1.5,quantiles=c(.98,.95),docheck=TRUE,ctl=TRUE)
+checktest(5,5,5,5,1.5,quantiles=c(.99,.975),docheck=TRUE,ctl=TRUE)
 
 }
