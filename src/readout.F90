@@ -72,7 +72,7 @@ implicit none
               end do
 #ifdef DOGCF
               call gcdn(bignpts,copy,scrap,igcd)
-              write(6,*) "gcd",igcd,"bignpts",bignpts
+!             write(6,*) "gcd",igcd,"bignpts",bignpts
               deallocate(copy,scrap)
 #endif
 !             write(6,*) "u1",(u1(ii),ii=1,npts)
@@ -87,7 +87,7 @@ implicit none
               efg=0
            else
 !             write(6,*) "In readout Input file not found",efg,"m1,m2,n1,n2",m1,m2,n1,n2,"npts",npts
-              write(6,*) "Calling randmat1"
+!             write(6,*) "Calling randmat1"
 !             open(39,file="todolist",position="append")
 !             write(39,*) m1,n1,m2,n2
 !             close(39)
@@ -129,7 +129,7 @@ implicit none
            u2v(u1*((n1+n2)*(m1+m2)+1)+u2+1)=u2
         end do
      end do
-     write(6,*) "In randmat1 nsamp",nsamp
+!    write(6,*) "In randmat1 nsamp",nsamp
      do ii=1,nsamp
         u1=0;u2=0
         do jj=1,m1+m2

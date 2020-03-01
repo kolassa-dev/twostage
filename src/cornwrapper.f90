@@ -46,10 +46,10 @@ implicit none
 !       write(6,*) "In cornwrapper corrected normal approx",xvc,"alpha",alpha
 !       write(6,*) "tointeger",tointeger,"done",done,"order",order
         if(tointeger.and.(done.eq.1)) then
-           write(6,*) "Mark a xvc(1)",xvc(1)
+!          write(6,*) "Mark a xvc(1)",xvc(1)
            xvraw(1)=xvc(1)
            temp=floor(xvc(1))+0.5d0
-           write(6,*) "First component reset with cc from ",xvc(1)," to ",temp
+!          write(6,*) "First component reset with cc from ",xvc(1)," to ",temp
            x1a=(temp-kk1(1))/sds(1)
            rtn=dsqrt(dble(nn))
            rtni=1.0d0/rtn
@@ -70,6 +70,6 @@ implicit none
         xvraw(2)=xvc(2)
         xvc(2)=floor(xvc(2))+0.5d0
      end if
-     write(6,*) "About to exit cornwrapper alpha",alpha,"xvc",xvc(1),xvc(2)
+!    write(6,*) "About to exit cornwrapper alpha",alpha,"xvc",xvc(1),xvc(2)
      return
      end
