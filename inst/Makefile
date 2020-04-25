@@ -105,7 +105,7 @@ iwilding.o: ../src/wilding.F90
 itest.o: test.F90
 	$(FC)    $(FFLAGS) -o itest.o -c test.F90 -DDOINT
 clean:
-	rm -f *.o *.exe *.so ../src/*.o ../src/*.so gcf.f uout* mout* copyme
+	rm -f *.o *.exe *.so ../src/*.o ../src/*.so gcf.f uout* mout* copyme fort.66 fort.33
 distclean: clean
 	rm -f dwilding.f90 *.temp.* libdcdf.a libran.a 
 dwildings.o: ../src/wildings.F90
@@ -203,7 +203,7 @@ outoflibs:
 	cp /tmp/Kolassa/ranlib.f/src/snorm.f /tmp/Kolassa/ranlib.f/src/ranf.f /tmp/Kolassa/ranlib.f/src/ignlgi.f /tmp/Kolassa/ranlib.f/src/setall.f /tmp/Kolassa/ranlib.f/src/inrgcm.f /tmp/Kolassa/ranlib.f/src/mltmod.f /tmp/Kolassa/ranlib.f/src/getcgn.f /tmp/Kolassa/ranlib.f/src/initgn.f /tmp/Kolassa/ranlib.f/src/qrgnin.f /tmp/Kolassa/dcdflib.f/src/dinvnr.f /tmp/Kolassa/dcdflib.f/src/stvaln.f /tmp/Kolassa/dcdflib.f/src/devlpl.f /tmp/Kolassa/dcdflib.f/src/cumnor.f /tmp/Kolassa/dcdflib.f/src/ipmpar.f /tmp/Kolassa/dcdflib.f/src/spmpar.f ../src; 
 cleanoutoflibs:
 	/bin/rm ../src/snorm.f ../src/ranf.f ../src/ignlgi.f ../src/setall.f ../src/inrgcm.f ../src/mltmod.f ../src/getcgn.f ../src/initgn.f ../src/qrgnin.f ../src/dinvnr.f ../src/stvaln.f ../src/devlpl.f ../src/cumnor.f ../src/ipmpar.f ../src/spmpar.f
-copyme: ../src/isecnorm.temp.f90 ../src/terms.temp.f ../src/nextp.temp.f90 pprank.temp.f
+copyme: ../src/isecnorm.temp.f90 ../src/terms.temp.f ../src/nextp.temp.f90 pprank.temp.f ../src/mvnpack.temp.f ../src/tvpack.temp.f
 	echo "done" > copyme
 libran.a:
 	mkdir tempdir; wget http://www.netlib.org/random/ranlib.f.tar.gz; gzip -dc ranlib.f.tar.gz |(umask 0; cd tempdir; tar xvf -); cd tempdir/ranlib.f/src; gfortran -c *.f; ar -r libran.a *.o; cp libran.a ../../.. ; cd ../../.. ; rm ranlib.f.tar.gz ; rm -r tempdir
