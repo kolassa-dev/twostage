@@ -6,10 +6,10 @@ FC = gfortran
 LIBS = -L /home/kolassa/lib -ldcdf -lran 
 LIBS = -L . -ldcdf -lran 
 RESEARCH = ~/Research1
-checktest.exe: checktest.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realpf.o realph.o realphs.o realpd.o realpc.o realpcs.o realpe.o fillp.o realpk.o realpks.o mvnpack.o edswrapper.o inside.o makexvn.o justrho.o gcf.o readinput.o texout.o rndstart.o
-	$(FC)    $(FFLAGS) -o checktest.exe checktest.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realph.o realphs.o realpd.o realpc.o realpcs.o realpf.o realpe.o fillp.o realpk.o realpks.o mvnpack.o edswrapper.o inside.o makexvn.o justrho.o gcf.o readinput.o texout.o rndstart.o $(LIBS)
-checkmom.exe: checkmom.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realpf.o realph.o realphs.o realpd.o realpc.o realpcs.o realpe.o fillp.o realpk.o realpks.o mvnpack.o texout.o makexvn.o
-	$(FC)    $(FFLAGS) -o checkmom.exe checkmom.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realph.o realphs.o realpd.o realpc.o realpcs.o realpf.o realpe.o fillp.o realpk.o realpks.o  mvnpack.o texout.o makexvn.o $(LIBS)
+checktest.exe: checktest.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realpf.o realph.o realphs.o realpd.o realpc.o realpcs.o realpe.o fillp.o realpk.o realpks.o mvnpack.o edswrapper.o inside.o makexvn.o justrho.o gcf.o readinput.o texout.o rndstart.o givedelta.o
+	$(FC)    $(FFLAGS) -o checktest.exe checktest.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realph.o realphs.o realpd.o realpc.o realpcs.o realpf.o realpe.o fillp.o realpk.o realpks.o mvnpack.o edswrapper.o inside.o makexvn.o justrho.o gcf.o readinput.o texout.o rndstart.o givedelta.o $(LIBS)
+checkmom.exe: checkmom.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realpf.o realph.o realphs.o realpd.o realpc.o realpcs.o realpe.o fillp.o realpk.o realpks.o mvnpack.o texout.o makexvn.o rndstart.o
+	$(FC)    $(FFLAGS) -o checkmom.exe checkmom.o readout.o mkfn.o moments.o writemoms.o mom2cum.o stdcum.o rstdcum.o cornwrapper.o terms.o isecnorm.o tvpack.o evalu.o pprank.o score.o tmom.o univariate.o realpg.o realpgs.o realph.o realphs.o realpd.o realpc.o realpcs.o realpf.o realpe.o fillp.o realpk.o realpks.o  mvnpack.o texout.o makexvn.o rndstart.o $(LIBS)
 dwilding1.exe: dwilding.o test1.o dwildings.o mix3.o readinput.o writemoms.o upower.o altern.o moments.o
 	$(FC)    $(FFLAGS) -o dwilding1.exe dwilding.o test1.o dwildings.o mix3.o readinput.o writemoms.o upower.o altern.o moments.o
 iwilding1.exe: iwilding.o itest1.o iwildings.o readinput.o altern.o
@@ -22,8 +22,8 @@ allperm.exe: allperm.o nextp.o dumpout1.o mkfn.o realphs.o realph.o parth.o part
 	$(FC)    $(FFLAGS) -o allperm.exe allperm.o nextp.o dumpout1.o mkfn.o realphs.o realph.o parth.o parths.o ufi.o partg.o realpg.o fillp.o partf.o realpf.o partd.o realpd.o realpk.o partk.o realpks.o partks.o parte.o realpe.o partc.o realpc.o realpcs.o partcs.o partgs.o realpgs.o partl.o univariate.o permdriver.o mvnpack.o mcsampsp.o checkone.o readinput.o $(LIBS)
 checkp.exe: checkpdriver.o checkp.o fillp.o mvnpack.o
 	$(FC)    $(FFLAGS) -o checkp.exe checkp.o fillp.o checkpdriver.o $(LIBS) mvnpack.o
-makenext.exe: makenext.o altern.o readout.o mkfn.o readinput.o updater.o findc.o dumpout1.o
-	$(FC)    $(FFLAGS) -o makenext.exe makenext.o altern.o readout.o mkfn.o readinput.o updater.o findc.o dumpout1.o
+makenext.exe: makenext.o altern.o readout.o mkfn.o readinput.o updater.o findc.o dumpout1.o rndstart.o
+	$(FC)    $(FFLAGS) -o makenext.exe makenext.o altern.o readout.o mkfn.o readinput.o updater.o findc.o dumpout1.o rndstart.o  $(LIBS)
 permdriver.o: permdriver.F90
 	$(FC)    $(FFLAGS) -c -DBIGINT permdriver.F90
 allperm.o: ../src/allperm.F90
@@ -105,9 +105,9 @@ iwilding.o: ../src/wilding.F90
 itest.o: test.F90
 	$(FC)    $(FFLAGS) -o itest.o -c test.F90 -DDOINT
 clean:
-	rm -f *.o *.exe *.so ../src/*.o ../src/*.so gcf.f uout* mout* copyme fort.66 fort.33
+	rm -f *.o *.exe *.so ../src/*.o ../src/*.so gcf.f mout* copyme fort.66 fort.33
 distclean: clean
-	rm -f dwilding.f90 *.temp.* libdcdf.a libran.a 
+	rm -f dwilding.f90 *.temp.* libdcdf.a libran.a uout*
 dwildings.o: ../src/wildings.F90
 	$(FC)    $(FFLAGS) -o dwildings.o -c ../src/wildings.F90
 iwildings.o: ../src/wildings.F90
@@ -199,6 +199,8 @@ gcf.o: gcf.f
 	$(FC)    $(SFFLAGS) -fdefault-integer-8 -c gcf.f
 rndstart.o: rndstart.f
 	$(FC)    $(FFLAGS) -c rndstart.f
+givedelta.o: givedelta.f90
+	$(FC)    $(FFLAGS) -c givedelta.f90
 outoflibs:
 	cp /tmp/Kolassa/ranlib.f/src/snorm.f /tmp/Kolassa/ranlib.f/src/ranf.f /tmp/Kolassa/ranlib.f/src/ignlgi.f /tmp/Kolassa/ranlib.f/src/setall.f /tmp/Kolassa/ranlib.f/src/inrgcm.f /tmp/Kolassa/ranlib.f/src/mltmod.f /tmp/Kolassa/ranlib.f/src/getcgn.f /tmp/Kolassa/ranlib.f/src/initgn.f /tmp/Kolassa/ranlib.f/src/qrgnin.f /tmp/Kolassa/dcdflib.f/src/dinvnr.f /tmp/Kolassa/dcdflib.f/src/stvaln.f /tmp/Kolassa/dcdflib.f/src/devlpl.f /tmp/Kolassa/dcdflib.f/src/cumnor.f /tmp/Kolassa/dcdflib.f/src/ipmpar.f /tmp/Kolassa/dcdflib.f/src/spmpar.f ../src; 
 cleanoutoflibs:

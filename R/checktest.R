@@ -12,9 +12,17 @@ checktest<-function(m1,n1,m2,n2,delta,quantiles=c(0.98,0.95),docheck=TRUE,ctl=FA
 #' @return List with componets delta, quantiles at which critical values ought to be calculated, m1, n2, m2, n2 from input,normal-approximation critical values, Cornish-Fisher critical values,true size of normal theory test, true size of Cornish-Fisher test, true power under delta, Edgworth approximation to power under normal critical values, Edgeworth approximation to power under Cornish-Fisher critical values.
 #' @examples
 #' #For two stage testing paper
-#' checktest(5,5,5,5,1.5,quantiles=c(.98,.95),docheck=TRUE,ctl=TRUE)
-#' checktest(5,5,5,5,1.5,quantiles=c(.99,.975),docheck=TRUE,ctl=TRUE)
-#'
+#' l1<-checktest(5,5,5,5,1.5,quantiles=c(.98,.95),docheck=TRUE,ctl=TRUE)
+#' l2<-checktest(5,5,5,5,1.5,quantiles=c(.99,.975),docheck=TRUE,ctl=TRUE)
+#' #Giving equal normal approximate critical values at each stage
+#' l3<-checktest(5,5,5,5,1.5,quantiles=c(.96993,.95),docheck=TRUE,ctl=TRUE)
+#' l4<-checktest(5,5,5,5,1.5,quantiles=c(.98544,.975),docheck=TRUE,ctl=TRUE)
+#' #Giving O'Brien and Fleming cutoff
+#' l5<-checktest(5,5,5,5,1.5,quantiles=c(.99125,.95),docheck=TRUE,ctl=TRUE)
+#' l6<-checktest(5,5,5,5,1.5,quantiles=c(.99743,.975),docheck=TRUE,ctl=TRUE)
+#' #Second table
+#' l7<-checktest(8,7,8,7,1.5,quantiles=c(.99125,.95),docheck=TRUE,ctl=TRUE)
+#' l8<-checktest(8,7,8,7,1.5,quantiles=c(.99743,.975),docheck=TRUE,ctl=TRUE)
 #' @export
    nn<-1
    rho<-.Fortran("justrho",m1=as.integer(m1),m2=as.integer(m2),

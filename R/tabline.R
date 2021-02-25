@@ -8,7 +8,7 @@
 tabline<-function(cto,latex=TRUE){
    refl<-cumsum(c(cto$m1,cto$m2))*cumsum(c(cto$m1,cto$m2))
    line<-c(round((1-cto$quantiles)*100,2),refl-cto$cunc,refl-cto$ccor,
-      round(100*c(cto$power,cto$uncedspower,cto$coredspower),2))
-   if(latex) line<-paste(paste(line,colapse="&"),"\\\\",sep="")
+      round(100*c(cto$size,cto$corsize,cto$power,cto$uncedspower,cto$coredspower),2))
+   if(latex) line<-paste(paste(line,collapse="&"),"\\\\\n",sep="")
    return(line)
 }

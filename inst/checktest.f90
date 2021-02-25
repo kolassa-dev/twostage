@@ -38,9 +38,11 @@ implicit none
 !          confi(1)=0.9000; confi(2)=0.8000
 !          confi(1)=0.9800; confi(2)=0.9500
 !          confi(1)=0.9900; confi(2)=0.9750
+           write(6,*) "After input delta",delta
            if(delta.lt.0.0d0) then
               call givedelta(m1,n1,m2,n2,confi(2),0.2d0,delta)
            end if
+           write(6,*) "After recalculating delta",delta
            call fillps(zero)
 !          call justrho(m1,m2,n1,n2,rho,zero)
 !          call makexvn(xvn,rho,confi)
@@ -82,20 +84,4 @@ implicit none
      end do
      call texout(-2,m1,n1,m2,n2,xvn(1),xvn(1),xvcn(2),xvcn(2),1.0d0-size,1.0d0-sizec)
      close(38)
-     end
-     subroutine givedelta(m1,n1,m2,n2,confi,beta,delta)
-implicit none
-     double precision confi, beta,zbeta,zalpha,altmean,scrap,delta,se
-     integer m1,n1,m2,n2
-     integer u2
-     call cdfnor(2,confi,1.0d0-confi,zalpha,0.0d0,1.0d0,u2,scrap)
-!    write(6,*) "zalpha",zalpha,"Error flag",u2
-     call cdfnor(2,1.0d0-beta,beta,zbeta,0.0d0,1.0d0,u2,scrap)
-!    write(6,*) "zbeta",zbeta,"Error flag",u2
-     se=sqrt((m1+m2+n1+n2+1)/dble(12.0*(m1+m2)*(n1+n2)))
-     altmean=0.5d0+(zalpha+zbeta)*se
-!    write(6,*) "altmean",altmean,"se",se
-     call cdfnor(2,altmean,1.0d0-altmean,delta,0.0d0,1.0d0,u2,scrap)
-!    write(6,*) "u2",u2,"delta",delta
-     return
      end
