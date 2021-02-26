@@ -40,12 +40,15 @@ Calculates values associated with testing using two-stage Mann-Whitney-Wilcoxon 
 }
 \examples{
 #For two stage testing paper
-checktest(5,5,5,5,1.5,quantiles=c(.98,.95),docheck=TRUE,ctl=TRUE)
-checktest(5,5,5,5,1.5,quantiles=c(.99,.975),docheck=TRUE,ctl=TRUE)
+l1<-checktest(5,5,5,5,1.5,quantiles=c(.98,.95),docheck=TRUE,ctl=TRUE)
+l2<-checktest(5,5,5,5,1.5,quantiles=c(.99,.975),docheck=TRUE,ctl=TRUE)
 #Giving equal normal approximate critical values at each stage
-checktest(5,5,5,5,1.5,quantiles=c(.96993,.95),docheck=TRUE,ctl=TRUE)
-checktest(5,5,5,5,1.5,quantiles=c(.98544,.975),docheck=TRUE,ctl=TRUE)
+l3<-checktest(5,5,5,5,1.5,quantiles=c(.96993,.95),docheck=TRUE,ctl=TRUE)
+l4<-checktest(5,5,5,5,1.5,quantiles=c(.98544,.975),docheck=TRUE,ctl=TRUE)
 #Giving O'Brien and Fleming cutoff
-checktest(5,5,5,5,1.5,quantiles=c(.99125,.95),docheck=TRUE,ctl=TRUE)
-checktest(5,5,5,5,1.5,quantiles=c(.99743,.975),docheck=TRUE,ctl=TRUE)
+l5<-checktest(5,5,5,5,1.5,quantiles=c(.99125,.95),docheck=TRUE,ctl=TRUE)
+l6<-checktest(5,5,5,5,1.5,quantiles=c(.99743,.975),docheck=TRUE,ctl=TRUE)
+#Second table
+l7<-checktest(8,7,8,7,1.5,quantiles=c(.99125,.95),docheck=TRUE,ctl=TRUE)
+l8<-checktest(8,7,8,7,1.5,quantiles=c(.99743,.975),docheck=TRUE,ctl=TRUE)
 }
